@@ -1,0 +1,53 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #0d0d0d;   /* 전체 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /* 선택/드래그 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#bookContainer {
+  height: 90vh;           /* 컨테이너 세로 고정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   margin: 0 5px; /* 좌우 5px 여백 추가 */
+}
+
+#bookContainer img {
+  height: 100%;           /* 컨테이너 높이에 맞춤 */
+  width: auto;            /* 가로 비율 유지 */
+  max-width: 100%;        /* 화면 밖으로 안 나가게 */
+  display: block;
+
+  /* 드래그/선택 방지 */
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev svg, .next svg {
+  width: 24px;
+  height: 24px;
+  stroke: #cccccc;
+  stroke-linecap: round;
+}
